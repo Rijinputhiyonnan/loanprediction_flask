@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction Form</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .form-group {
+            flex: 1 1 calc(50% - 20px);
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #eb4791;
+            border-radius: 3px;
+        }
+        input:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #464adf4728b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Loan Prediction Form</h2>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="married">Married:</label>
+                <select id="married" name="married">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dependents">Dependents:</label>
+                <input type="text" id="dependents" name="dependents">
+            </div>
+            <div class="form-group">
+                <label for="education">Education:</label>
+                <input type="text" id="education" name="education">
+            </div>
+            <div class="form-group">
+                <label for="self_employed">Self Employed:</label>
+                <input type="text" id="self_employed" name="self_employed">
+            </div>
+            <div class="form-group">
+                <label for="applicant_income">Applicant Income:</label>
+                <input type="number" id="applicant_income" name="applicant_income">
+            </div>
+            <div class="form-group">
+                <label for="coapplicant_income">Coapplicant Income:</label>
+                <input type="number" id="coapplicant_income" name="coapplicant_income">
+            </div>
+            <div class="form-group">
+                <label for="loan_amount">Loan Amount:</label>
+                <input type="number" id="loan_amount" name="loan_amount">
+            </div>
+            <div class="form-group">
+                <label for="loan_amount_term">Loan Amount Term:</label>
+                <input type="number" id="loan_amount_term" name="loan_amount_term">
+            </div>
+            <div class="form-group">
+                <label for="credit_history">Credit History:</label>
+                <input type="number" id="credit_history" name="credit_history">
+            </div>
+            <div class="form-group">
+                <label for="property_area">Property Area:</label>
+                <input type="text" id="property_area" name="property_area">
+            </div>
+            <div class="form-group" style="flex: 1 1 100%;">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+
+        <h2>Result: {{p_result }}</h2>
+    </div>
+</body>
+</html>
